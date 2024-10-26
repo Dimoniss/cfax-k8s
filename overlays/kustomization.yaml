@@ -1,0 +1,28 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: cfax-dev
+
+resources:
+  - namespace.yaml
+
+images:
+  - name: europe-central2-docker.pkg.dev/carfax-431019/cfax-back-end/cfax-back-end
+    newTag: develop
+  - name: europe-central2-docker.pkg.dev/carfax-431019/cfax-front-end/cfax-front-end
+    newTag: develop
+
+helmGlobals:
+  chartHome: ../helm-charts
+
+helmCharts:
+
+  - name: back-end
+    version: 0.1.0
+    releaseName: back-end
+    valuesFile: back-end/values.yaml
+
+  - name: front-end
+    version: 0.1.0
+    releaseName: front-end
+    valuesFile: front-end/values.yaml

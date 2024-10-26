@@ -4,14 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3e1b7a3d-1536-4686-bb1d-5647cafacb5f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cfax-k8s.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kustomization.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/namespace.yaml" afterDir="false" />
+    <list default="true" id="3e1b7a3d-1536-4686-bb1d-5647cafacb5f" name="Changes" comment="fix">
+      <change afterPath="$PROJECT_DIR$/helm-charts/back-end/Chart.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/helm-charts/back-end/template/_helpers.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/helm-charts/back-end/template/configmap.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/helm-charts/back-end/template/delpoyment.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/helm-charts/back-end/template/service.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/helm-charts/back-end/values.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/helm-charts/front-end/Chart.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/helm-charts/front-end/template/_helpers.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/helm-charts/front-end/template/config/settings.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/helm-charts/front-end/template/configmap.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/helm-charts/front-end/template/deployment.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/helm-charts/front-end/template/service.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/helm-charts/front-end/values.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/overlays/back-end/values.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/overlays/front-end/values.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/overlays/kustomization.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/overlays/kustomization.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,15 +35,20 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
-  <component name="KubernetesApiProvider"><![CDATA[{
-  "isMigrated": true
-}]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 5
-}]]></component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
   <component name="ProjectId" id="2nvndvuzi8CgkRh6ruw7dLXAhpY" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -44,7 +58,9 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "dev",
     "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/Dmytro/Desktop/carfax/cfax/cfax-k8s/helm-charts/back-end",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -53,6 +69,16 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Dmytro\Desktop\carfax\cfax\cfax-k8s\helm-charts\back-end" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Dmytro\Desktop\carfax\cfax\cfax-k8s\helm-charts\back-end\template" />
+      <recent name="C:\Users\Dmytro\Desktop\carfax\cfax\cfax-k8s\helm-charts\front-end\template" />
+      <recent name="C:\Users\Dmytro\Desktop\carfax\cfax\cfax-k8s\helm-charts\back-end" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -70,10 +96,24 @@
       <option name="presentableId" value="Default" />
       <updated>1729862510969</updated>
       <workItem from="1729862511918" duration="817000" />
+      <workItem from="1729863344651" duration="4392000" />
     </task>
+    <task id="LOCAL-00001" summary="fix">
+      <option name="closed" value="true" />
+      <created>1729863494301</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1729863494301</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix" />
   </component>
 </project>

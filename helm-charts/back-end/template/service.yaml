@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Release.Name }}
+  labels:
+    app.kubernetes.io/name: ambrogio-portal
+    app.kubernetes.io/component: back-end
+  annotations:
+    cloud.google.com/neg: '{"exposed_ports": { {{ .Values.containerPort | quote }}: {"name": "zcs-ambrogio-{{ required "Error: is required a valid environment.name" .Values.global.MAIN_ENVIRONMENT_NAME }}-{{ .Release.Name }}"}}}'
+spec:
+  ports:
+    - port: {{ $.Values.containerPort }}
+      targetPort: {{ $.Values.containerPortName }}
+  selector:
+    app.kubernetes.io/name: ambrogio-portal
+    app.kubernetes.io/component: back-end
+  type: ClusterIP

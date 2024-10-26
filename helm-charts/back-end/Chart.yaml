@@ -1,0 +1,4 @@
+apiVersion: v2
+name: cfax-back-end
+description: A Helm chart for cfax-back-end
+version: 0.1.0

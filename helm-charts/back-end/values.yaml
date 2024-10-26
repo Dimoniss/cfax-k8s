@@ -1,0 +1,14 @@
+container:
+  pullPolicy: Always
+  requests:
+    memory: "128Mi"
+    cpu: "100m"
+  limits:
+    memory: "256Mi"
+    cpu: "200m"
+  healthPath: "/health"
+  replicas: 1
+
+imageLabel: "latest"
+containerPort: 80
+containerPortName: http-50

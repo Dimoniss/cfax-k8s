@@ -1,0 +1,17 @@
+environment:
+  name: "OVERWRITE-IN-OVERLAYS"
+
+container:
+  pullPolicy: Always
+#  readinessPath: "/portal/readiness.json"
+#  livenessPath: "/portal/readiness.json"
+  requests:
+    memory: "16Mi"
+    cpu: "10m"
+  limits:
+    memory: "32Mi"
+    cpu: "20m"
+  replicas: 1
+
+imageLabel: "latest"
+containerPort: 80
