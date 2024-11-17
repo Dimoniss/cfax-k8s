@@ -16,7 +16,7 @@ steps:
       mkdir -p target
 
   - id: 'kustomize'
-    name: line/kubectl-kustomize:1.29.1
+    name: line/kubectl-kustomize:1.31.0-5.5.0
     args:
       - 'kustomize'
       - 'build'
