@@ -1,0 +1,3 @@
+{{- define "config.envVariables" -}}
+  {{ toYaml .Values.envVariables | indent 2 }}
+{{ end }}

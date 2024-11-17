@@ -1,0 +1,62 @@
+steps:
+  - name: 'ubuntu'
+    env:
+      - "BRANCH_NAME=$BRANCH_NAME"
+    script: |
+      #!/bin/bash
+      echo "***********************"
+      echo "$BRANCH_NAME"
+      echo "***********************"      
+      echo "=== pwd ==="
+      pwd
+      echo "=== ls ==="
+      ls -latr 
+      echo "=== env ==="
+      env
+      mkdir -p target
+
+  - id: 'kustomize'
+    name: europe-docker.pkg.dev/zcs-robotics-01/zcs-ambrogio-utilities/alpine/k8s:1.29.1
+    args:
+      - 'kustomize'
+      - 'build'
+      - '--enable-helm'
+      - '$_K8S_YAML_PATH'
+      - '-o'
+      - '$_K8S_GENERATED_YAML'
+    env:
+      - 'APPLY=false'
+      - 'CLOUDSDK_COMPUTE_REGION=$_GKE_LOCATION'
+      - 'CLOUDSDK_CONTAINER_CLUSTER=$_GKE_CLUSTER'
+      - 'GCLOUD_PROJECT=$PROJECT_ID'
+
+  - name: 'ubuntu'
+    id: 'cat manifests'
+    script: |
+      #!/bin/bash
+      cat $_K8S_GENERATED_YAML   
+
+  - id: 'GKE deploy'
+    name: "gcr.io/cloud-builders/gke-deploy"
+    args:
+      - run
+      - '--filename=$_K8S_GENERATED_YAML'
+      - '--location=$_GKE_LOCATION'
+      - '--cluster=$_GKE_CLUSTER'
+    timeout: 1200s
+
+timeout: 1200s
+options:
+#  machineType: 'E2_HIGHCPU_8'
+  logging: CLOUD_LOGGING_ONLY
+
+substitutions:
+
+  _K8S_YAML_PATH: overlays/
+  _K8S_GENERATED_YAML: target/k8s_generated.yaml
+
+  _GKE_LOCATION: europe-west1-c
+  _GKE_CLUSTER: gke-sigemi-dev
+
+  _K8S_NAMESPACE: cfax-dev
+  _PROJECT_ID: carfax-431019

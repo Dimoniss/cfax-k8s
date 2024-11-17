@@ -1,0 +1,13 @@
+{{- define "config.settings" -}}
+{{ with .Values.envVariables }}
+  (function(window) {
+  window.__env = window.__env || {};
+
+  window.__env.back_end = {
+
+}
+}
+
+})(this);
+{{ end }}
+{{ end -}}

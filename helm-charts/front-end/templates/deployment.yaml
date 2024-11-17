@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}
+  labels:
+    app.kubernetes.io/name: cfax-portal
+    app.kubernetes.io/component: front-end
+spec:
+  {{- if.Values.container.replicas }}
+  replicas: {{ .Values.container.replicas }}
+  {{- end }}
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: cfax-portal
+      app.kubernetes.io/component: front-end
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: cfax-portal
+        app.kubernetes.io/component: front-end
+    spec:
+      containers:
+        - name: {{ .Release.Name }}
+          image: europe-central2-docker.pkg.dev/carfax-431019/cfax-front-end/cfax-{{ $.Release.Name }}:{{ .Values.imageLabel }}
+          {{- if .Values.container.pullPolicy }}
+          imagePullPolicy: {{ .Values.container.pullPolicy }}
+          {{- end }}
+          ports:
+            - containerPort: 80
+              name: http
+              protocol: TCP
+          volumeMounts:
+            - name: {{ .Release.Name }}-config
+              mountPath: /usr/share/nginx/html/portal/cfg
+          resources:
+            requests:
+              memory: {{ .Values.container.requests.memory }}
+              cpu: {{ .Values.container.requests.cpu }}
+            limits:
+              memory: {{ .Values.container.limits.memory }}
+              cpu: {{ .Values.container.limits.cpu }}
+      volumes:
+        - name: {{ .Release.Name }}-config
+          configMap:
+            name: {{ .Release.Name }}-env-vars-{{ include "help.configID" $ }}

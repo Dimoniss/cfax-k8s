@@ -7,9 +7,7 @@ metadata:
     app.kubernetes.io/component: back-end
   {{- with .Values.container }}
 spec:
-  {{- if.replicas }}
-  replicas: {{ .Values.replicas }}
-  {{- end }}
+  replicas: 1
   strategy:
     type: RollingUpdate
     rollingUpdate:
@@ -24,19 +22,9 @@ spec:
         app.kubernetes.io/name: cfax-portal
         app.kubernetes.io/component: back-end
     spec:
-#      serviceAccountName: zcs-ambrogio-service-account
       containers:
         - name: {{ $.Release.Name }}
-          image: europe-central2-docker.pkg.dev/carfax-431019/cfax-back-end/cfax-back-end
-#          readinessProbe:
-#            httpGet:
-#              path: /{{ $.Release.Name }}/q{{ .healthPath }}/ready
-#              port: {{ $.Values.containerPortName }}
-#          livenessProbe:
-#            httpGet:
-#              path: /{{ $.Release.Name }}/q{{ .healthPath }}/live
-#              port: {{ $.Values.containerPortName }}
-#            initialDelaySeconds: 50
+          image: europe-central2-docker.pkg.dev/carfax-431019/cfax-back-end/cfax-{{ $.Release.Name }}:{{ $.Values.imageLabel }}
           ports:
             - containerPort: 50080
               name: {{ $.Values.containerPortName }}
