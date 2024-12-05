@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="3e1b7a3d-1536-4686-bb1d-5647cafacb5f" name="Changes" comment="fix kustomize image source">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cloudbuild.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/cloudbuild.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,6 +101,7 @@
       <workItem from="1729927459671" duration="3384000" />
       <workItem from="1731773380325" duration="537000" />
       <workItem from="1731829512621" duration="9133000" />
+      <workItem from="1733422195569" duration="832000" />
     </task>
     <task id="LOCAL-00001" summary="fix">
       <option name="closed" value="true" />
@@ -141,7 +143,15 @@
       <option name="project" value="LOCAL" />
       <updated>1731840737284</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="fix kustomize image source">
+      <option name="closed" value="true" />
+      <created>1733422312078</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1733422312078</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
