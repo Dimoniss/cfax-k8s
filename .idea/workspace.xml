@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3e1b7a3d-1536-4686-bb1d-5647cafacb5f" name="Changes" comment="ready for deploy">
+    <list default="true" id="3e1b7a3d-1536-4686-bb1d-5647cafacb5f" name="Changes" comment="fix kustomize image source">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -99,7 +99,7 @@
       <workItem from="1729926921469" duration="499000" />
       <workItem from="1729927459671" duration="3384000" />
       <workItem from="1731773380325" duration="537000" />
-      <workItem from="1731829512621" duration="8203000" />
+      <workItem from="1731829512621" duration="9133000" />
     </task>
     <task id="LOCAL-00001" summary="fix">
       <option name="closed" value="true" />
@@ -125,7 +125,23 @@
       <option name="project" value="LOCAL" />
       <updated>1731839523452</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="fix kustomize image source">
+      <option name="closed" value="true" />
+      <created>1731840143020</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1731840143020</updated>
+    </task>
+    <task id="LOCAL-00005" summary="fix kustomize image source">
+      <option name="closed" value="true" />
+      <created>1731840737284</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1731840737284</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -145,6 +161,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="fix" />
     <MESSAGE value="ready for deploy" />
-    <option name="LAST_COMMIT_MESSAGE" value="ready for deploy" />
+    <MESSAGE value="fix kustomize image source" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix kustomize image source" />
   </component>
 </project>
