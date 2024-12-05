@@ -55,7 +55,7 @@ substitutions:
   _K8S_YAML_PATH: overlays/
   _K8S_GENERATED_YAML: target/k8s_generated.yaml
 
-  _GKE_LOCATION: europe-west1-c
+  _GKE_LOCATION: europe-west1
   _GKE_CLUSTER: cfax-dev-01
 
   _K8S_NAMESPACE: cfax-dev
